@@ -1,4 +1,4 @@
-// use lirary called acios to do GET/POSST requests
+// use lirary called acios to do GET/POST requests
 
 import http from "../http-common";
 
