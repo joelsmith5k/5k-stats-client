@@ -1,0 +1,200 @@
+@media only screen and (max-width: 500px) {
+  
+  .nextTournamentComponentContainer {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    color: white;
+    display: flex;
+    /* flex-direction: column;
+    justify-content: center; */
+  }
+
+  .titleContainer {
+    color: #61ffc8;
+    font-size: 24px;
+    font-family: "Staatliches";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tournamentContainer {
+    margin-top: 5%;
+    border-radius: 4px;
+    display: flex;
+  }
+
+  .tournament {
+    color: white;
+    font-family: "Staatliches";
+    font-size: 24px;
+    text-align: left;
+    padding-top: 10%;
+  }
+
+  .playerStatsContainer {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statContainer {
+    border: 1px solid darkseagreen;
+    border-radius: 3px;
+  }
+
+  .statsTitle {
+    color: lightblue;
+    font-family: "Staatliches";
+    font-size: 20px;
+    margin-bottom: 10%;
+    margin-top: 5%;
+  }
+
+  .stat {
+    text-align: center;
+    font-family: "Staatliches";
+    font-size: 14px;
+
+    color: lightblue;
+    font-family: "Staatliches";
+  }
+
+  .immelmanContainer {
+    text-align: center;
+    font-family: "Staatliches";
+    border: 1px solid darkseagreen;
+    border-radius: 3px;
+    margin-top: 3%;
+  }
+
+  .immelmanTitle {
+    color: lightblue;
+    font-size: 14px;
+  }
+
+  .immelmanPick {
+    color: lightblue;
+    font-size: 14px;
+  }
+
+  .immelmanReason {
+    color: lightblue;
+    font-size: 12px;
+    font-size: 12px;
+  
+  }
+
+  .footerText {
+    color: lightgreen;
+    font-size: larger;
+    font-family: "Staatliches";
+  }
+
+}
+
+/* ------ OVER 500px!!! UPDATE AS WELL! --------------------------- */
+
+/* TESTING */
+
+@media only screen and (min-width: 501px) {
+  .nextTournamentComponentContainer {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    color: white;
+  }
+
+  .titleContainer {
+    color: #61ffc8;
+    font-size: 36px;
+    font-family: "Staatliches";
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tournamentContainer {
+    margin-top: 5%;
+    border-radius: 4px;
+    display: flex;
+    height: 40%;
+  }
+
+  .tournament {
+    color: white;
+    font-family: "Staatliches";
+    font-size: 32px;
+    text-align: left;
+    padding-top: 10%;
+  }
+
+  .playerStatsContainer {
+    height: 98%;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statContainer {
+    border: 1px solid darkseagreen;
+    border-radius: 3px;
+    height: 60vh;
+    margin-top: 3%;
+  }
+
+  .statsTitle {
+    color: lightblue;
+    font-family: "Staatliches";
+    font-size: 20px;
+    margin-bottom: 10%;
+    margin-top: 5%;
+  }
+
+  .stat {
+    text-align: center;
+    font-family: "Staatliches";
+    font-size: 14px;
+
+    color: lightblue;
+    font-family: "Staatliches";
+  }
+
+  .immelmanContainer {
+    text-align: center;
+    font-family: "Staatliches";
+    border: 1px solid darkseagreen;
+    border-radius: 3px;
+    height: 50%;
+    margin-top: 3%;
+  }
+
+  .immelmanTitle {
+    color: lightblue;
+    font-size: 36px;
+    height: 25%;
+  }
+
+  .immelmanPick {
+    color: lightblue;
+    font-size: 24px;
+    height: 25%;
+  }
+
+  .immelmanReason {
+    color: lightblue;
+    font-size: 24px;
+    font-size: 24px;
+    height: 50%;
+  }
+
+  .footerText {
+    color: lightgreen;
+    font-size: larger;
+    font-family: "Staatliches";
+  }
+}

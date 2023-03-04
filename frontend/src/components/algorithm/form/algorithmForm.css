@@ -1,0 +1,27 @@
+.algorithmFormComponentContainer {
+  color: white;
+  font-family: "Staatliches";
+  border: 1px solid darkseagreen;
+  padding: 2vh 2vh;
+}
+
+
+.formRow {
+    color: white;
+    font-family: "Staatliches";
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+
+  .buttonContainer{
+    
+    height: 10%;
+    border-radius: 4px;
+    font-family: "Staatliches";
+    margin-top: 2%;
+  }
