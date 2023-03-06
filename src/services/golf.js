@@ -6,12 +6,12 @@ class GolfDataService {
   // all the functions for api calls to mongoDB
   // default page 0, http get request to base url.
   getNextTournament() {
-    return http.get("/golf");
+    return http.get("/5kstats/golf");
   }
 
   getPlayerStats() {
     // console.log(id)
-    return http.get("/golf/stats");
+    return http.get("/5kstats/golf/stats");
   }
 }
 
