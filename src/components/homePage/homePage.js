@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import { Carousel } from "react-bootstrap";
 import HomeCarousel from "./homeCarousel";
 import "./homePage.css";
 import Row from "react-bootstrap/Row";

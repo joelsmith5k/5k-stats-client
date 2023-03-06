@@ -1,0 +1,15 @@
+.titleContainer{
+  height: 20vh;
+}
+
+.topThreeContainer{
+  height:30vh;
+}
+
+.tournamentContainer{
+  height:50vh;
+}
+
+h1{
+  color: aliceblue;
+}
