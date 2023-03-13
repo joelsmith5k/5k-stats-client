@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function PgaComponent() {
-  const [pgaComponent, setTournament] = useState({});
+  const [tournament, setTournament] = useState({});
   const [playerOne, setPlayerOneStats] = useState({});
   const [playerTwo, setPlayerTwoStats] = useState({});
   const [playerThree, setPlayerThreeStats] = useState({});
@@ -47,31 +47,22 @@ function PgaComponent() {
   };
 
   return (
-
-    <Container >
-      <Row>
+    <Container className="pgaComponentContainer">
+      <Row className="pgaTitleContainer">
         <Col>
-          <div className="titleContainer">
-            <h1>HEADER ROW
-            </h1>
-          </div>
+          <h1>CURATED 2023 PGA TOUR STATS</h1>
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <div className="topThreeContainer">
-            <h1>TOP THREE ROW: Test {playerOne.Name}
-            </h1>
-          </div>
-        </Col>
+      <Row className="pgaTopThreeContainer">
+        <div>
+          <h1>TOP PICK: {playerOne.Name}</h1>
+        </div>
       </Row>
-      <Row>
-        <Col>
-          <div className="tournamentContainer">
-            <h1>TOURNAMENT ROW
-            </h1>
-          </div>
-        </Col>
+      <Row className="pgaTournamentContainer">
+        <div className="tournamentContentContainer">
+          <h1>TOURNAMENT: {tournament.Name}</h1>
+          <h1>VENUE: {tournament.Venue}</h1>
+        </div>
       </Row>
     </Container>
   );

@@ -6,30 +6,21 @@ import Col from "react-bootstrap/Col";
 
 function NhlComponent() {
   return (
-    <Container >
-      <Row>
-        <Col>
-          <div className="titleContainer">
-            <h1>
-            </h1>
-          </div>
-        </Col>
+    <Container className="nhlComponentContainer">
+      <Row className="nhlTitleContainer">
+        <div>
+          <h1>NHL PROJECTIONS</h1>
+        </div>
       </Row>
-      <Row>
-        <Col>
-          <div className="statContainer">
-            <h1>COMING SOON..
-            </h1>
-          </div>
-        </Col>
+      <Row className="nhlStatContainer">
+        <div>
+          <h1>COMING SOON..</h1>
+        </div>
       </Row>
-      <Row>
-        <Col>
-          <div className="statContainer">
-            <h1>
-            </h1>
-          </div>
-        </Col>
+      <Row className="nhlStatContainer">
+        <div>
+          <h1>COMING SOON..</h1>
+        </div>
       </Row>
     </Container>
   );
