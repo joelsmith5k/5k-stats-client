@@ -30,7 +30,7 @@ function NavBarComponent() {
               </Link>
             </NavDropdown.Item>
             <NavDropdown.Item bg="light" variant="light">
-              <Link to={"/pga"} className="nav-link">
+              <Link to={"/nba"} className="nav-link">
                 NBA
               </Link>
             </NavDropdown.Item>
