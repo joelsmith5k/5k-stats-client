@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GolfDataService from "../../services/golf";
-import courseImage from "../../images/courses/ocean.jpg";
 import "./pgaComponent.css";
+import PlayerDropDownButton from "./playerDropdownButton/playerDropdownButton";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -9,9 +9,8 @@ import Col from "react-bootstrap/Col";
 
 function PgaComponent() {
   const [tournament, setTournament] = useState({});
-  const [playerOne, setPlayerOneStats] = useState({});
-  const [playerTwo, setPlayerTwoStats] = useState({});
-  const [playerThree, setPlayerThreeStats] = useState({});
+  const [players, setPlayerOneStats] = useState({});
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     getTournament();
@@ -37,32 +36,52 @@ function PgaComponent() {
     GolfDataService.getPlayerStats()
       .then((response) => {
         console.log(response.data);
-        setPlayerOneStats(response.data[0]);
-        setPlayerTwoStats(response.data[1]);
-        setPlayerThreeStats(response.data[2]);
+        setPlayerOneStats(response.data);
+        setLoading(false);
       })
       .catch((e) => {
         console.log(e);
       });
   };
 
-  return (
-    <Container className="pgaComponentContainer">
-      <Row className="pgaTitleContainer">
-        <Col>
+  if (isLoading) {
+    return (
+      <Container fluid className="pgaContainer">
+      <Row>
+        <Col className="pgaTitleContainer centered">
           <h1>CURATED 2023 PGA TOUR STATS</h1>
         </Col>
       </Row>
-      <Row className="pgaTopThreeContainer">
-        <div>
-          <h1>TOP PICK: {playerOne.Name}</h1>
-        </div>
+      <Row>
+        <Col className="pgaTitleContainer centered">
+          <h1>... Loading Players ...</h1>
+        </Col>
       </Row>
-      <Row className="pgaTournamentContainer">
-        <div className="tournamentContentContainer">
-          <h1>TOURNAMENT: {tournament.Name}</h1>
-          <h1>VENUE: {tournament.Venue}</h1>
-        </div>
+    </Container>
+    )
+  }
+  return (
+    <Container fluid className="pgaContainer">
+      <Row>
+        <Col className="pgaTitleContainer centered">
+          <h1>CURATED 2023 PGA TOUR STATS</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="tournamentTitleContainer centered">
+          <h1>UPCOMING TOURNAMENT: {tournament.Name}</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={4} className="selectionContainer centered">
+          <h1>Player Selection</h1>
+          <div>
+            <PlayerDropDownButton items={players.slice(0, 10)} />
+          </div>
+        </Col>
+        <Col sm={8} className="statsContainer centered">
+          <h1>Fantasy Stats</h1>
+        </Col>
       </Row>
     </Container>
   );

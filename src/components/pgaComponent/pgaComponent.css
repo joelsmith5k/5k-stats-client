@@ -1,40 +1,27 @@
-
-.pgaComponentContainer{
-  /* color: white; */
+.pgaContainer{
+  height: 100%;
+}
+.centered{
+  color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  align-items: center;
+
 }
 
 .pgaTitleContainer{
-  height: 33%;
   color: black;
-  justify-content: center;
-  align-items: center;
 }
 
-.pgaTopThreeContainer{
-  height:33%;
-  color: orange;
-  justify-content: center;
-  align-items: center;
-}
-
-.pgaTournamentContainer{
-  height:33%;
+.tournamentTitleContainer{
   color: black;
-  justify-content: center;
-  align-items: center;
 }
 
-.tournamentContentContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.selectionContainer{
+  color: black;
 }
 
-
+.statsContainer{
+  color: black;
+}
