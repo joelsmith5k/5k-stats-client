@@ -1,46 +1,93 @@
 import React, { useState, useEffect } from "react";
 import "./navBarComponent.css";
-import Container from "react-bootstrap/Container";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import Logo from "../../images/logos/bull_smirk_green.png";
-import { Routes, Route, Link } from "react-router-dom";
+import { Disclosure, Transition } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-function NavBarComponent() {
+const navigation = [
+  { name: 'Home', href: '/', current: true },
+  { name: 'NBA', href: '/nba', current: false },
+  { name: 'NHL', href: '/nhl', current: false },
+  { name: 'PGA', href: '/pga', current: false },
+]
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+const NavBarComponent = () => {
   return (
+    <Disclosure as="nav" className="bg-gray-800">
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-shrink-0 items-center">
+                  <img
+                    className="block h-8 w-auto lg:hidden"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    alt="Your Company"
+                  />
+                  <img
+                    className="hidden h-8 w-auto lg:block"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    alt="Your Company"
+                  />
+                </div>
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'rounded-md px-3 py-2 text-sm font-medium'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <Navbar bg="dark" variant="dark">
-    <Container>
-      <Navbar.Brand href="/">
-        <img src={Logo} alt="Logo" />
-      </Navbar.Brand>
-      <Navbar.Brand href="/">5kStats</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <NavDropdown title="Leagues" id="basic-nav-dropdown">
-            <NavDropdown.Item bg="light" variant="light">
-              <Link to={"/pga"} className="nav-link">
-                PGA
-              </Link>
-            </NavDropdown.Item>
-            <NavDropdown.Item bg="light" variant="light">
-              <Link to={"/nhl"} className="nav-link">
-                NHL
-              </Link>
-            </NavDropdown.Item>
-            <NavDropdown.Item bg="light" variant="light">
-              <Link to={"/nba"} className="nav-link">
-                NBA
-              </Link>
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-
-  );
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium'
+                  )}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
+  )
 }
 
 export default NavBarComponent;

@@ -14,10 +14,11 @@ import FooterComponent from "./components/footerComponent/footerComponent";
 
 const App = () => {
   return (
-    <div className="App">
-      <div className="navbarContainer">
+    <div className="container mx-auto bg-gray-200 h-screen">
+      <div className="">
         <NavBarComponent></NavBarComponent>
       </div>
+
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -26,9 +27,11 @@ const App = () => {
         <Route path="/nba" element={<NbaComponent />} />
       </Routes>
 
-      <div className="footerContainer">
+
+      <div>
         <FooterComponent></FooterComponent>
       </div>
+
     </div>
   );
 };

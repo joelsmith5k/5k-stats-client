@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GolfDataService from "../../services/golf";
 import "./pgaComponent.css";
-import PlayerDropDownButton from "./playerDropdownButton/playerDropdownButton";
+import PlayerStatsController from "./playerStatsController/playerStatsController";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -46,44 +46,30 @@ function PgaComponent() {
 
   if (isLoading) {
     return (
-      <Container fluid className="pgaContainer">
-      <Row>
-        <Col className="pgaTitleContainer centered">
-          <h1>CURATED 2023 PGA TOUR STATS</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="pgaTitleContainer centered">
-          <h1>... Loading Players ...</h1>
-        </Col>
-      </Row>
-    </Container>
-    )
+      <div>
+        <h1>CURATED 2023 PGA TOUR STATS</h1>
+      </div>
+    );
   }
   return (
-    <Container fluid className="pgaContainer">
-      <Row>
-        <Col className="pgaTitleContainer centered">
-          <h1>CURATED 2023 PGA TOUR STATS</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="tournamentTitleContainer centered">
-          <h1>UPCOMING TOURNAMENT: {tournament.Name}</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={4} className="selectionContainer centered">
-          <h1>Player Selection</h1>
-          <div>
-            <PlayerDropDownButton items={players.slice(0, 10)} />
-          </div>
-        </Col>
-        <Col sm={8} className="statsContainer centered">
-          <h1>Fantasy Stats</h1>
-        </Col>
-      </Row>
-    </Container>
+    <div className="pgaContainer flex flex-col items-center">
+      <div className="flex flex-col h-24 justify-center">
+        <h1>CURATED 2023 PGA TOUR STATS</h1>
+      </div>
+      <div className="flex flex-col h-24 justify-center">
+        <h1>UPCOMING TOURNAMENT: {tournament.Name}</h1>
+      </div>
+      <div className="flex flex-col h-24 justify-center">
+        <h1>Player Selection</h1>
+        <div className="flex flex-col h-24 justify-center">
+          <PlayerStatsController items={players.slice(0, 10)} />
+        </div>
+      </div>
+
+      <div className="flex flex-col h-24 justify-center">
+        <h1>Fantasy Stats</h1>
+      </div>
+    </div>
   );
 }
 
