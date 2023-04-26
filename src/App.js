@@ -14,25 +14,16 @@ import FooterComponent from "./components/footerComponent/footerComponent";
 
 const App = () => {
   return (
-    <div className="container mx-auto bg-gray-200 h-screen">
-      <div className="">
-        <NavBarComponent></NavBarComponent>
-      </div>
-
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/pga" element={<PgaComponent />} />
-        <Route path="/nhl" element={<NhlComponent />} />
-        <Route path="/nba" element={<NbaComponent />} />
-      </Routes>
-
-
-      <div>
-        <FooterComponent></FooterComponent>
-      </div>
-
-    </div>
+    <>
+    <NavBarComponent />
+    <Routes>
+    
+       <Route path="/" element={<HomePage />} />
+       <Route path="/pga" element={<PgaComponent />} />
+       <Route path="/nba" element={<NbaComponent />} />
+       <Route path="/nhl" element={<NhlComponent />} />
+    </Routes>
+ </>
   );
 };
 

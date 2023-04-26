@@ -1,15 +1,19 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import App from "./App";
+import React from "react"
+import ReactDOM from "react-dom"
+//import { createRoot } from 'react-dom/client';
+import {render} from "react-dom"
+import App from "./App"
+import { BrowserRouter } from "react-router-dom"
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+const root = document.getElementById("root")
+render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  root
+)
 
 // ------ Original Template Code -----
 // import React from 'react';
