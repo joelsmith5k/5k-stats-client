@@ -1,26 +1,4 @@
 .nbaComponentContainer{
-    /* color: white; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  .nbaTitleContainer{
-    height: 25%;
-    color: black;
-    justify-content: center;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .nbaStatContainer{
-    height:40%;
-    color: black;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  background-color: #291720;
+  color: whitesmoke;
+}

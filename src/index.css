@@ -12,9 +12,4 @@ code {
     monospace;
 }
 
-/* Dropdown menu colouring - could not sort it out via bootstrap*/
-div.dropdown-menu.show {
-  background-color: #000000; 
 }
-a.dropdown-item {
-  color: #ffffff;   }

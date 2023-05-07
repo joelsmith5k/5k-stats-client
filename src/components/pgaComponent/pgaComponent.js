@@ -52,7 +52,7 @@ function PgaComponent() {
     );
   }
   return (
-    <div className="pgaContainer flex flex-col items-center">
+    <div className="flex flex-col text-center items-center h-screen pgaComponentContainer">
       <div className="flex flex-col h-24 justify-center">
         <h1>CURATED 2023 PGA TOUR STATS</h1>
       </div>
