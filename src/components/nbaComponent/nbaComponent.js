@@ -13,11 +13,6 @@ function NbaComponent() {
         <div>
           <h1>COMING SOON..</h1>
         </div>
-
-        <div>
-          <h1>COMING SOON..</h1>
-        </div>
-
     </div>
   );
 }
