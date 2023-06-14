@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 function NhlComponent() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen nhlComponentContainer">
+    <div className="flex flex-col justify-center items-center h-screen nhlComponentContainer h-screen">
 
         <div>
           <h1>NHL PROJECTIONS</h1>
