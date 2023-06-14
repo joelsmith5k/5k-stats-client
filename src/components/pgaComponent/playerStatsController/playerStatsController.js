@@ -9,8 +9,6 @@ function classNames(...classes) {
 function PlayerStatsController({ items }) {
   const [selected, setSelected] = useState(items[0]);
 
-  let [index] = useState(0);
-
   const handleSelect = (e) => {
     console.log(e.currentTarget.dataset.rank);
   };
@@ -43,7 +41,7 @@ function PlayerStatsController({ items }) {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {items.map((item) => (
+                {items.map((item, index) => (
                   <Listbox.Option
                     key={item.Name}
                     data-rank={item.Rank}
@@ -65,7 +63,7 @@ function PlayerStatsController({ items }) {
                               "ml-3 block truncate"
                             )}
                           >
-                            {item.Rank + ". " + item.Name}
+                            {index++ + ". " + item.Name}
                           </span>
                         </div>
 
