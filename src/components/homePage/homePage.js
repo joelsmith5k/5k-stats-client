@@ -4,12 +4,13 @@ import "./homePage.css";
 import NBA from "../../images/logos/NBA_logo.png";
 import NHL from "../../images/logos/NHL_logo.png";
 import PGA from "../../images/logos/PGA_logo.png";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const tiles = [
-    { title: "NBA", subtitle: "Coming Soon", image: NBA },
-    { title: "NHL", subtitle: "Coming Soon", image: NHL },
-    { title: "PGA", subtitle: "", image: PGA },
+    { title: "NBA", subtitle: "Coming Soon", image: NBA, url: "/NBA" },
+    { title: "NHL", subtitle: "Coming Soon", image: NHL, url: "/NHL" },
+    { title: "PGA", subtitle: "", image: PGA, url: "/PGA" },
   ];
 
   return (
@@ -27,13 +28,16 @@ function HomePage() {
           <div
             key={item.title}
             className={
-              "w-48 h-48 my-5 rounded-lg border-solid flex flex-col content-center justify-center text-center mx-3 border-2 border-slate-300"
+              "w-48 h-48 my-5 rounded-lg border-solid flex flex-col content-center justify-center text-center mx-3"
             }
           >
-            <img
-              src={item.image}
-              className="object-scale-down h-36 w-36 mx-auto"
-            ></img>
+            <Link to={item.url}>
+              <img
+                src={item.image}
+                className="object-scale-down h-36 w-36 mx-auto my-3 hover:scale-125"
+              ></img>
+            </Link>
+
             <h4>{item.subtitle}</h4>
           </div>
         ))}
