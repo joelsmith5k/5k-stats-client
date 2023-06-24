@@ -7,15 +7,13 @@ import Col from "react-bootstrap/Col";
 function NhlComponent() {
   return (
     <div className="flex flex-col justify-center items-center h-screen nhlComponentContainer h-screen">
+      <div>
+        <h1>NHL PROJECTIONS</h1>
+      </div>
 
-        <div>
-          <h1>NHL PROJECTIONS</h1>
-        </div>
-
-        <div>
-          <h1>COMING SOON..</h1>
-        </div>
-
+      <div>
+        <h1>2023/2024 SEASON</h1>
+      </div>
     </div>
   );
 }

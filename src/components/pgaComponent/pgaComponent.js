@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import GolfDataService from "../../services/golf";
 import "./pgaComponent.css";
 import PlayerStatsController from "./playerStatsController/playerStatsController";
+import SpinnerComponent from "../common/spinner/spinner";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -11,6 +12,7 @@ function PgaComponent() {
   const [tournament, setTournament] = useState({});
   const [players, setPlayerOneStats] = useState({});
   const [isLoading, setLoading] = useState(true);
+
 
   useEffect(() => {
     getTournament();
@@ -44,13 +46,7 @@ function PgaComponent() {
       });
   };
 
-  if (isLoading) {
-    return (
-      <div>
-        <h1>CURATED 2023 PGA TOUR STATS</h1>
-      </div>
-    );
-  }
+
   return (
     <div className="flex flex-col text-center items-center h-screen pgaComponentContainer h-screen">
       <div className="flex flex-col h-24 justify-center">
@@ -62,7 +58,7 @@ function PgaComponent() {
       <div className="flex flex-col h-24 justify-center">
         <h1>Player Selection</h1>
         <div className="flex flex-col h-24 justify-center">
-          <PlayerStatsController items={players.slice(0, 10)} />
+           {isLoading ? <SpinnerComponent/> : <PlayerStatsController items={players.slice(0, 10)} />}
         </div>
       </div>
 
