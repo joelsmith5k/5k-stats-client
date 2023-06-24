@@ -17,13 +17,12 @@ function PlayerStatsController({ items }) {
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
-            Show stats
-          </Listbox.Label>
           <div className="relative mt-2">
-            <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6">
+            <Listbox.Button className=" w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               <span className="flex items-center">
-                <span className="ml-3 block truncate">{selected.Rank + '. ' + selected.Name}</span>
+                <span className="ml-3 block truncate">
+                  {selected.Rank + ". " + selected.Name}
+                </span>
               </span>
               <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                 <ChevronUpDownIcon
@@ -41,14 +40,14 @@ function PlayerStatsController({ items }) {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {items.map((item, index) => (
+                {items.map((item) => (
                   <Listbox.Option
                     key={item.Name}
                     data-rank={item.Rank}
                     onClick={handleSelect}
                     className={({ active }) =>
                       classNames(
-                        active ? "bg-indigo-600 text-white" : "text-gray-900",
+                        active ? " bg-indigo-600 text-white" : "text-gray-900",
                         "relative cursor-default select-none py-2 pl-3 pr-9"
                       )
                     }
@@ -63,7 +62,7 @@ function PlayerStatsController({ items }) {
                               "ml-3 block truncate"
                             )}
                           >
-                            {index++ + ". " + item.Name}
+                            {item.Rank + ". " + item.Name}
                           </span>
                         </div>
 

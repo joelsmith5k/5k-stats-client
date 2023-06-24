@@ -13,16 +13,20 @@ function PgaComponent() {
   const [players, setPlayerOneStats] = useState({});
   const [isLoading, setLoading] = useState(true);
 
-
   useEffect(() => {
     getTournament();
     getPlayerStats();
   }, []);
 
-  function modifyDate(response) {
-    response.data.StartDate = response.data.StartDate.substring(0, 10);
+  function modifyDate(tournament) {
+    tournament.data.StartDate = tournament.data.StartDate.substring(0, 10);
   }
 
+  async function setRanks(players) {
+    for (let i = 1; i < 11; i++) {
+      players[i - 1].Rank = i;
+    }
+  }
   const getTournament = () => {
     GolfDataService.getNextTournament()
       .then((response) => {
@@ -38,6 +42,7 @@ function PgaComponent() {
     GolfDataService.getPlayerStats()
       .then((response) => {
         console.log(response.data);
+        setRanks(response.data);
         setPlayerOneStats(response.data);
         setLoading(false);
       })
@@ -45,7 +50,6 @@ function PgaComponent() {
         console.log(e);
       });
   };
-
 
   return (
     <div className="flex flex-col text-center items-center h-screen pgaComponentContainer h-screen">
@@ -58,12 +62,12 @@ function PgaComponent() {
       <div className="flex flex-col h-24 justify-center">
         <h1>Player Selection</h1>
         <div className="flex flex-col h-24 justify-center">
-           {isLoading ? <SpinnerComponent/> : <PlayerStatsController items={players.slice(0, 10)} />}
+          {isLoading ? (
+            <SpinnerComponent />
+          ) : (
+            <PlayerStatsController items={players.slice(0, 10)} />
+          )}
         </div>
-      </div>
-
-      <div className="flex flex-col h-24 justify-center">
-        <h1>Fantasy Stats</h1>
       </div>
     </div>
   );
