@@ -65,7 +65,7 @@ function PgaComponent() {
           {isLoading ? (
             <SpinnerComponent />
           ) : (
-            <PlayerStatsController items={players.slice(0, 10)} />
+            <PlayerStatsController players={players.slice(0, 10)} />
           )}
         </div>
       </div>
