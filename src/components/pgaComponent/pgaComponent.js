@@ -56,12 +56,16 @@ function PgaComponent() {
       <div className="flex flex-col h-24 justify-center">
         <h1>CURATED 2023 PGA TOUR STATS</h1>
       </div>
-      <div className="flex flex-col h-24 justify-center">
+
+
+      <div className="flex flex-col h-24 justify-center my-16">
         <h1>UPCOMING TOURNAMENT: {tournament.Name}</h1>
       </div>
+
+
       <div className="flex flex-col h-24 justify-center">
-        <h1>Player Selection</h1>
-        <div className="flex flex-col h-24 justify-center">
+        
+        <div className="flex flex-col h-24 justify-center my-10">
           {isLoading ? (
             <SpinnerComponent />
           ) : (

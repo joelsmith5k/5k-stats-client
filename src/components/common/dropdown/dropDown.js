@@ -15,7 +15,8 @@ function DropDownComponent({ items, onChange }) {
   };
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <div className="my-10">
+    <Listbox value={selected} onChange={setSelected} >
       {({ open }) => (
         <>
           <div className="relative mt-2">
@@ -87,6 +88,7 @@ function DropDownComponent({ items, onChange }) {
         </>
       )}
     </Listbox>
+    </div>
   );
 }
 

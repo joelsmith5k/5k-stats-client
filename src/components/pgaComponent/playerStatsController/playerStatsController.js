@@ -1,17 +1,24 @@
 import { useState } from "react";
 import DropDownComponent from "../../common/dropdown/dropDown";
+import PlayerStatComponent from "../playerStatComponent/playerStatComponent";
 
 function PlayerStatsController({ players }) {
-  const [selectedPlayerID, setSelectedPlayerID] = useState(players[0].PlayerID);
+  const [selectedPlayer, setSelectedPlayer] = useState(players[0]);
 
   const handleFieldChange = (playerID) => {
-    setSelectedPlayerID({ playerID });
-    console.log("call back.. playerID: " + playerID);
+    let player = players.find((p) => p.PlayerID == playerID);
+    setSelectedPlayer({ player });
+    console.log(player);
   };
 
   return (
     <div>
-      <DropDownComponent items={players} onChange={handleFieldChange} />
+      <div>
+        <DropDownComponent items={players} onChange={handleFieldChange} />
+      </div>
+      <div>
+        {selectedPlayer != null ? <PlayerStatComponent player={selectedPlayer}/> : "loading"}
+      </div>
     </div>
   );
 }
