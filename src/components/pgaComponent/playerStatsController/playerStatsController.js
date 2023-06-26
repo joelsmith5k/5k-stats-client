@@ -17,7 +17,11 @@ function PlayerStatsController({ players }) {
         <DropDownComponent items={players} onChange={handleFieldChange} />
       </div>
       <div>
-        {selectedPlayer != null ? <PlayerStatComponent player={selectedPlayer}/> : "loading"}
+        {selectedPlayer != null ? (
+          <PlayerStatComponent player={selectedPlayer} />
+        ) : (
+          "loading"
+        )}
       </div>
     </div>
   );

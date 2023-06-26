@@ -4,10 +4,6 @@ import "./pgaComponent.css";
 import PlayerStatsController from "./playerStatsController/playerStatsController";
 import SpinnerComponent from "../common/spinner/spinner";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
 function PgaComponent() {
   const [tournament, setTournament] = useState({});
   const [players, setPlayerOneStats] = useState({});
@@ -57,14 +53,11 @@ function PgaComponent() {
         <h1>CURATED 2023 PGA TOUR STATS</h1>
       </div>
 
-
       <div className="flex flex-col h-24 justify-center my-16">
         <h1>UPCOMING TOURNAMENT: {tournament.Name}</h1>
       </div>
 
-
       <div className="flex flex-col h-24 justify-center">
-        
         <div className="flex flex-col h-24 justify-center my-10">
           {isLoading ? (
             <SpinnerComponent />
