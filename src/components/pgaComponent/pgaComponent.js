@@ -48,24 +48,30 @@ function PgaComponent() {
   };
 
   return (
-    <div className="flex flex-col text-center items-center h-screen pgaComponentContainer h-screen">
+    <div className="flex flex-col text-center items-center h-screen pgaComponentContainer">
       <div className="flex flex-col h-24 justify-center">
-        <h1>CURATED 2023 PGA TOUR STATS</h1>
+        <h1>2023 PGA TOUR STATS</h1>
       </div>
 
-      <div className="flex flex-col h-24 justify-center my-16">
-        <h1>UPCOMING TOURNAMENT: {tournament.Name}</h1>
-      </div>
-
-      <div className="flex flex-col h-24 justify-center">
-        <div className="flex flex-col h-24 justify-center my-10">
-          {isLoading ? (
-            <SpinnerComponent />
-          ) : (
-            <PlayerStatsController players={players.slice(0, 10)} />
-          )}
+      {isLoading ? (
+        <div className="flex flex-col h-auto justify-center ">
+          <SpinnerComponent />
         </div>
-      </div>
+      ) : (
+        <div className="flex flex-col h-screen">
+          <div className="h-auto w-auto my-8 py-4 mx-4 px-4 rounded-lg border-solid border-2 border-slate-300">
+            <h1>
+              {tournament.Name} - {tournament.Venue}
+            </h1>
+            <h2>Par: {tournament.Par}</h2>
+            <h2>Yards: {tournament.Yards}</h2>
+          </div>
+
+          <div className="h-auto w-auto py-4 px-8 ">
+            <PlayerStatsController players={players.slice(0, 10)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

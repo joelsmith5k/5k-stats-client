@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DropDownComponent from "../../common/dropdown/dropDown";
 import PlayerStatComponent from "../playerStatComponent/playerStatComponent";
+import SpinnerComponent from "../../common/spinner/spinner";
 
 function PlayerStatsController({ players }) {
   const [selectedPlayer, setSelectedPlayer] = useState(players[0]);
@@ -20,7 +21,7 @@ function PlayerStatsController({ players }) {
         {selectedPlayer != null ? (
           <PlayerStatComponent player={selectedPlayer} />
         ) : (
-          "loading"
+          <SpinnerComponent/>
         )}
       </div>
     </div>
