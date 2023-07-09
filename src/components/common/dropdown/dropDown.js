@@ -10,7 +10,6 @@ function DropDownComponent({ items, onChange }) {
   const [selected, setSelected] = useState(items[0]);
 
   const handleSelect = (e) => {
-    console.log(e.currentTarget.dataset.playerid);
     onChange(e.currentTarget.dataset.playerid);
   };
 

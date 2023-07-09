@@ -9,7 +9,6 @@ function PlayerStatsController({ players }) {
   const handleFieldChange = (playerID) => {
     let player = players.find((p) => p.PlayerID == playerID);
     setSelectedPlayer({ player });
-    console.log(player);
   };
 
   return (

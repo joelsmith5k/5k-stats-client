@@ -41,7 +41,6 @@ function PgaComponent() {
   const getPlayerStats = () => {
     GolfDataService.getPlayerStats()
       .then((response) => {
-        console.log(response.data);
         setRanks(response.data);
         setPlayerOneStats(response.data);
         setLoading(false);
