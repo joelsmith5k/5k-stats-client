@@ -6,7 +6,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const NavBarComponent = () => {
   const navigation = [
-    { name: "Home", url: "/", current: true },
+    { name: "Home", url: "/", current: false },
     { name: "NBA", url: "/nba", current: false },
     { name: "NHL", url: "/nhl", current: false },
     { name: "PGA", url: "/pga", current: false },
@@ -53,7 +53,7 @@ const NavBarComponent = () => {
                         key={item.name}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
+                            ? "text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "rounded-md px-3 py-2 text-sm font-medium"
                         )}
@@ -76,7 +76,7 @@ const NavBarComponent = () => {
                   key={item.name}
                   className={classNames(
                     item.current
-                      ? "bg-gray-900 text-white"
+                      ? "text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
