@@ -8,6 +8,7 @@ function PgaComponent() {
   const [tournament, setTournament] = useState({});
   const [players, setPlayerOneStats] = useState({});
   const [isLoading, setLoading] = useState(true);
+  const [startDate, setStartDate] = useState("");
 
   useEffect(() => {
     getTournament();
@@ -28,6 +29,9 @@ function PgaComponent() {
       .then((response) => {
         modifyDate(response);
         setTournament(response.data);
+        let startDate = (new Date(response.data.StartDate));
+        startDate.setDate(startDate.getDate() + 1); // Because UTC -> PST sets it back a day
+        setStartDate(startDate.toDateString());
       })
       .catch((e) => {
         console.log(e);
@@ -59,15 +63,16 @@ function PgaComponent() {
         </div>
       ) : (
         <div className="flex flex-col h-screen">
-          <div className="h-auto w-auto my-8 py-4 mx-4 px-4 rounded-lg border-solid border-2 border-slate-300">
+          <div className="h-auto w-auto my-4 py-4 mx-4 px-4 rounded-lg border-solid border-2 border-slate-300">
             <h1>
               {tournament.Name} - {tournament.Venue}
             </h1>
             <h2>Par: {tournament.Par}</h2>
             <h2>Yards: {tournament.Yards}</h2>
+            <h2>Start: {startDate}</h2>
           </div>
 
-          <div className="h-auto w-auto py-4 px-8 ">
+          <div className="h-auto w-auto py-2 px-8 ">
             <PlayerStatsController players={players.slice(0, 10)} />
           </div>
         </div>
