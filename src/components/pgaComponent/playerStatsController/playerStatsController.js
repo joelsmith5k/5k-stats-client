@@ -21,7 +21,7 @@ function PlayerStatsController({ players }) {
         {selectedPlayer != null ? (
           <PlayerStatComponent player={selectedPlayer} />
         ) : (
-          <SpinnerComponent/>
+          <SpinnerComponent />
         )}
       </div>
     </div>

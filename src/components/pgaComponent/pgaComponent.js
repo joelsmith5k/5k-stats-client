@@ -29,7 +29,7 @@ function PgaComponent() {
       .then((response) => {
         modifyDate(response);
         setTournament(response.data);
-        let startDate = (new Date(response.data.StartDate));
+        let startDate = new Date(response.data.StartDate);
         startDate.setDate(startDate.getDate() + 1); // Because UTC -> PST sets it back a day
         setStartDate(startDate.toDateString());
       })
