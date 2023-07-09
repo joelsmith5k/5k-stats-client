@@ -19,7 +19,7 @@ function PgaComponent() {
     tournament.data.StartDate = tournament.data.StartDate.substring(0, 10);
   }
 
-  async function setRanks(players) {
+  function setRanks(players) {
     for (let i = 1; i < 11; i++) {
       players[i - 1].Rank = i;
     }
