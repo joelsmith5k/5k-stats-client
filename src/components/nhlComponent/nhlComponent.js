@@ -89,7 +89,7 @@ function NhlComponent() {
     return <SpinnerComponent></SpinnerComponent>;
   }
   return (
-    <div className="flex flex-col justify-center items-center nhlComponentContainer border-2 border-current">
+    <div className="flex flex-col justify-center items-center nhlComponentContainer">
       <div className="flex flex-col justify-center items-center content-center h-36 w-full mx-4">
         <div className="text-center">
           <h2>NHL GOALS AGAINST ANALYSIS</h2>
@@ -97,7 +97,7 @@ function NhlComponent() {
         <div className="w-96 flex-col text-center"></div>
       </div>
 
-      <div className="flex flex-col h-98 w-full py-2">
+      <div className="flex flex-col h-132 w-full py-2">
         <div className="flex flex-row flex-wrap justify-center content-center w-full">
           <div className="text-center py-2">
               <h4>GOALS</h4>
@@ -109,7 +109,7 @@ function NhlComponent() {
             </div>
         </div>
 
-        <div className="text-center py-4 h-32">
+        <div className="text-center h-32 py-4 my-2">
           <p>
             This page is designed to test a theory that positional data is underexplored in NHL projections.
             <br></br>
@@ -120,13 +120,12 @@ function NhlComponent() {
             View individual breakdowns and insights below.
           </p>
         </div>
+
       </div>
-      <div className="flex flex-col justify-center items-center h-96 border-2 border-current w-full mx-4">
-        <div className="text-center border-2 border-current">
-          <h3>Test div 1</h3>
-        </div>
-        <div className="text-center border-2 border-current">
-          <h3>Test div 2</h3>
+      <div className="flex flex-col justify-center items-center h-96 w-full mx-4">
+        <div className="text-center">
+          <h3>Goalie Breakdown Section</h3>
+          <h3>Coming Soon</h3>
         </div>
       </div>
     </div>
