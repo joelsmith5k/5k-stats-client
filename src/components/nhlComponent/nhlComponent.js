@@ -90,27 +90,26 @@ function NhlComponent() {
   }
   return (
     <div className="flex flex-col justify-center items-center nhlComponentContainer border-2 border-current">
-      <div className="flex flex-col justify-center items-center h-36 w-full mx-4">
+      <div className="flex flex-col justify-center items-center content-center h-36 w-full mx-4">
         <div className="text-center">
           <h2>NHL GOALS AGAINST ANALYSIS</h2>
         </div>
         <div className="w-96 flex-col text-center"></div>
       </div>
 
-      <div className="flex flex-col justify-center items-center h-98 border-2 border-current w-full mx-4 py-5">
-        <div className="flex flex-row justify-center items-center w-full">
-          <div className="text-center">
-            <h4>AGGREGATE GOAL DATA</h4>
-            <PieChart chartData={goalsChartData} />
-          </div>
-          <div className="w-24"></div>
-          <div className="text-center">
-            <h4>AGGREGATE PLAYER DATA</h4>
-            <PieChart chartData={playersChartData} />
-          </div>
+      <div className="flex flex-col h-98 w-full py-2">
+        <div className="flex flex-row flex-wrap justify-center content-center w-full">
+          <div className="text-center py-2">
+              <h4>GOALS</h4>
+              <PieChart chartData={goalsChartData} />
+            </div>
+            <div className="text-center py-2">
+              <h4>GOALSCORERS</h4>
+              <PieChart chartData={playersChartData} />
+            </div>
         </div>
-        <br></br>
-        <div className="text-center">
+
+        <div className="text-center py-4 h-32">
           <p>
             This page is designed to test a theory that positional data is underexplored in NHL projections.
             <br></br>
@@ -123,8 +122,11 @@ function NhlComponent() {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center h-96 border-2 border-current w-full mx-4">
-        <div className="text-center">
-          <h3>Individual Goalie Breakdown Section</h3>
+        <div className="text-center border-2 border-current">
+          <h3>Test div 1</h3>
+        </div>
+        <div className="text-center border-2 border-current">
+          <h3>Test div 2</h3>
         </div>
       </div>
     </div>
