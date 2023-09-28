@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function HomePage() {
   const tiles = [
     { title: "NBA", subtitle: "Coming Soon", image: NBA, url: "/NBA" },
-    { title: "NHL", subtitle: "Coming Soon", image: NHL, url: "/NHL" },
+    { title: "NHL", subtitle: "", image: NHL, url: "/NHL" },
     { title: "PGA", subtitle: "", image: PGA, url: "/PGA" },
   ];
 

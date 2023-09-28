@@ -50,8 +50,15 @@ function PgaComponent() {
       });
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen pgaComponentContainer">
+        <SpinnerComponent></SpinnerComponent>
+      </div>
+    );
+  }
   return (
-    <div className="flex flex-col text-center items-center h-screen pgaComponentContainer">
+    <div className="flex flex-col text-center items-center pgaComponentContainer">
       <div className="flex flex-col h-24 justify-center">
         <h1>2023 PGA TOUR STATS</h1>
       </div>
