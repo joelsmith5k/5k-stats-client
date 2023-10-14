@@ -5,6 +5,8 @@ import PieChart from "../common/charts/pie";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import SpinnerComponent from "../common/spinner/spinner";
+import DropDownComponent from "../common/dropdown/dropDown";
+import GoalieBreakdownComponent from "./goalieBreakdownComponent/goalieBreakdownComponent";
 
 Chart.register(CategoryScale);
 
@@ -12,10 +14,13 @@ function NhlComponent() {
   const [nhlAggregates, setNhlAggregates] = useState({});
   const [goalsChartData, setGoalsChartData] = useState({});
   const [playersChartData, setPlayersChartData] = useState({});
-  const [isLoading, setLoading] = useState(true);
+  const [goalieBreakdowns, setGoalieBreakdowns] = useState({});
+  const [isLoadingAggregates, setLoadingAggregates] = useState(true);
+  const [isLoadingGoalies, setLoadingGoalies] = useState(true);
 
   useEffect(() => {
     getNhlAggregates();
+    getGoalieBreakdowns();
   }, []);
 
   // make this more generic, accept params.. [] for labels, [] for data, etc..
@@ -70,6 +75,17 @@ function NhlComponent() {
     return result;
   };
 
+  const formatGoalieBreakdowns = (goalieBreakdowns) => {
+    let alphabetRank = 1;
+    goalieBreakdowns.sort((a, b) => a.name.localeCompare(b.name));
+    goalieBreakdowns.forEach((g) => {
+      g.PlayerID = g._id;
+      g.Rank = alphabetRank++;
+      g.Name = g.name;
+    });
+    return goalieBreakdowns;
+  };
+
   const getNhlAggregates = () => {
     NhlDataService.getNhlAggregates()
       .then((response) => {
@@ -78,14 +94,26 @@ function NhlComponent() {
         setNhlAggregates(response.data);
         setGoalsChartData(goalsChartData);
         setPlayersChartData(playersChartData);
-        setLoading(false);
+        setLoadingAggregates(false);
       })
       .catch((e) => {
         console.log(e);
       });
   };
 
-  if (isLoading) {
+  const getGoalieBreakdowns = () => {
+    NhlDataService.getNhlGoalieStats()
+      .then((response) => {
+        let formattedData = formatGoalieBreakdowns(response.data);
+        setGoalieBreakdowns(formattedData);
+        setLoadingGoalies(false);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  if (isLoadingAggregates) {
     return (
       <div className="flex flex-col justify-center items-center h-screen nhlComponentContainer">
         <SpinnerComponent></SpinnerComponent>
@@ -128,10 +156,14 @@ function NhlComponent() {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center h-96 w-full mx-4">
-        <div className="text-center">
-          <h3>Goalie Breakdown Section</h3>
-          <h3>Coming Soon</h3>
-        </div>
+        {isLoadingGoalies ? (
+          ""
+        ) : (
+          <div className="mx-auto text-center">
+            <h3>Individual Goalie Breakdowns</h3>
+            <GoalieBreakdownComponent goalieStats={goalieBreakdowns} />
+          </div>
+        )}
       </div>
     </div>
   );

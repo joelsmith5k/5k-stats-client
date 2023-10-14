@@ -11,7 +11,7 @@ function NbaComponent() {
           <h1>NBA PROJECTIONS</h1>
         </div>
         <div>
-          <h1>2023/2024 SEASON</h1>
+          <h1>2024/2025 SEASON</h1>
         </div>
     </div>
   );
