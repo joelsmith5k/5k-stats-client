@@ -32,13 +32,13 @@ function NhlComponent() {
           label: "Goals By Position",
           data: [data.PL_GA, data.PC_GA, data.PR_GA, data.PD_GA],
           backgroundColor: [
-            "rgba(75,192,192,1)",
+            "#4BC0C0",
             "#ecf0f1",
             "#50AF95",
-            "#f3ba2f",
+            "#6F7070",
             "#2a71d0",
           ],
-          borderColor: "black",
+          borderColor: "#291720",
           borderWidth: 2,
         },
       ],
@@ -60,13 +60,13 @@ function NhlComponent() {
             data.num_players_PD,
           ],
           backgroundColor: [
-            "rgba(75,192,192,1)",
+            "#4BC0C0",
             "#ecf0f1",
             "#50AF95",
-            "#f3ba2f",
+            "#6F7070",
             "#2a71d0",
           ],
-          borderColor: "black",
+          borderColor: "#291720",
           borderWidth: 2,
         },
       ],
@@ -142,7 +142,7 @@ function NhlComponent() {
         </div>
 
         <div className="flex flex-row text-center">
-          <div className="w-full mx-auto text-center">
+          <div className="w-full mx-auto text-center py-4">
             <p>
               This page was built to help test a theory that positional data is
               underexplored in NHL projections.
@@ -151,8 +151,6 @@ function NhlComponent() {
               the 21/22 and 22/23 seasons.
               <br></br>
               Data sourced from www.hockey-reference.com.
-              <br></br>
-              View individual breakdowns and insights below.
             </p>
           </div>
         </div>
