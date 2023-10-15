@@ -129,7 +129,7 @@ function NhlComponent() {
         <div className="w-96 flex-col text-center"></div>
       </div>
 
-      <div className="flex flex-col h-132 w-full py-2">
+      <div className="flex flex-col w-full py-2">
         <div className="flex flex-row flex-wrap justify-center content-center w-full">
           <div className="text-center py-2">
             <h4>GOALS</h4>
@@ -141,27 +141,29 @@ function NhlComponent() {
           </div>
         </div>
 
-        <div className="text-center h-32 py-4 my-2">
-          <p>
-            This page was built to help test a theory that positional data is
-            underexplored in NHL projections.
-            <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
-            {nhlAggregates.num_players} players against 32 NHL goalies over the
-            21/22 and 22/23 seasons.
-            <br></br>
-            Data sourced from www.hockey-reference.com.
-            <br></br>
-            View individual breakdowns and insights below.
-          </p>
+        <div className="flex flex-row text-center">
+          <div className="w-full mx-auto text-center">
+            <p>
+              This page was built to help test a theory that positional data is
+              underexplored in NHL projections.
+              <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
+              {nhlAggregates.num_players} players against 32 NHL goalies over
+              the 21/22 and 22/23 seasons.
+              <br></br>
+              Data sourced from www.hockey-reference.com.
+              <br></br>
+              View individual breakdowns and insights below.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col justify-center items-center h-96 w-full mx-4">
+
         {isLoadingGoalies ? (
-          ""
+          <div className="flex flex-row items-center w-full"></div>
         ) : (
-          <div className="mx-auto text-center">
-            <h3>Individual Goalie Breakdowns</h3>
-            <GoalieBreakdownComponent goalieStats={goalieBreakdowns} />
+          <div className="flex flex-row items-center w-full justify-center">
+            <div>
+              <GoalieBreakdownComponent goalieStats={goalieBreakdowns} />
+            </div>
           </div>
         )}
       </div>
