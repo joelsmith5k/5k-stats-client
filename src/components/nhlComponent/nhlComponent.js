@@ -77,11 +77,10 @@ function NhlComponent() {
 
   const formatGoalieBreakdowns = (goalieBreakdowns) => {
     let alphabetRank = 1;
-    goalieBreakdowns.sort((a, b) => a.name.localeCompare(b.name));
+    goalieBreakdowns.sort((a, b) => a.Name.localeCompare(b.Name));
     goalieBreakdowns.forEach((g) => {
       g.PlayerID = g._id;
       g.Rank = alphabetRank++;
-      g.Name = g.name;
     });
     return goalieBreakdowns;
   };
@@ -147,8 +146,8 @@ function NhlComponent() {
               This page was built to help test a theory that positional data is
               underexplored in NHL projections.
               <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
-              {nhlAggregates.num_players} players against 32 NHL goalies over
-              the 21/22 and 22/23 seasons.
+              {nhlAggregates.num_players} players against 39 NHL goalies over
+              the 20/21, 21/22, and 22/23 seasons.
               <br></br>
               Data sourced from www.hockey-reference.com.
             </p>
