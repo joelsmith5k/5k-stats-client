@@ -121,7 +121,7 @@ function GoalieBreakdownComponent({ goalieStats }) {
               checked={showDexterity}
               onChange={(e) => {}}
             />
-            <p>{showDexterity ? "Hide Dexterity" : "Show Dexterity"}</p>
+            <p className="text-xs">{showDexterity ? "Hide Dexterity" : "Show Dexterity"}</p>
           </div>
         )}
       </div>

@@ -79,7 +79,7 @@ function PgaComponent() {
             <h2>Start: {startDate}</h2>
           </div>
 
-          <div className="h-auto w-auto py-2 px-8 ">
+          <div className="flex fex-row items-center justify-center py-2 px-8 ">
             <PlayerStatsController players={players.slice(0, 10)} />
           </div>
         </div>

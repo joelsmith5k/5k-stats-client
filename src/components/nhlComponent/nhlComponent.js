@@ -79,6 +79,10 @@ function NhlComponent() {
     let alphabetRank = 1;
     goalieBreakdowns.sort((a, b) => a.Name.localeCompare(b.Name));
     goalieBreakdowns.forEach((g) => {
+      // access goal details with g['goal_details']
+      // for (const detail in g['goal_details']) {
+      //   console.log(" goal... " + detail);
+      // }
       g.PlayerID = g._id;
       g.Rank = alphabetRank++;
     });
@@ -155,7 +159,9 @@ function NhlComponent() {
         </div>
 
         {isLoadingGoalies ? (
-          <div className="flex flex-row items-center w-full"></div>
+          <div className="flex flex-row items-center h-96 nhlComponentContainer">
+            <SpinnerComponent></SpinnerComponent>
+        </div>
         ) : (
           <div className="flex flex-row items-center w-full justify-center">
             <div>

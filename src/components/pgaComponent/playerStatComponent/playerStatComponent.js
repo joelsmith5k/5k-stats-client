@@ -1,6 +1,6 @@
 function PlayerStatComponent({ player }) {
   return (
-    <div className="">
+    <div className="w-96">
       <div>
         {player.player != undefined ? (
           <div>
