@@ -1,28 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropDownComponent from "../../common/dropdown/dropDown";
-import PlayerStatComponent from "../playerStatComponent/playerStatComponent";
-import SpinnerComponent from "../../common/spinner/spinner";
+import BarChart from "../../common/charts/horizontal-bar";
+import "./playerStatsController.css";
 
 function PlayerStatsController({ players }) {
   const [selectedPlayer, setSelectedPlayer] = useState(players[0]);
+  const [showChartData, setShowChartData] = useState(false);
 
   const handleFieldChange = (playerID) => {
     let player = players.find((p) => p.PlayerID == playerID);
     setSelectedPlayer({ player });
+    setShowChartData(true);
   };
 
   return (
-    <div>
-      <div>
+    <div className="standardColors">
+      <div className="w-80">
         <DropDownComponent items={players} onChange={handleFieldChange} />
       </div>
-      <div>
-        {selectedPlayer != null ? (
-          <PlayerStatComponent player={selectedPlayer} />
-        ) : (
-          <SpinnerComponent />
-        )}
-      </div>
+
+      {showChartData ? (
+        <div className="">
+          <BarChart
+            chartData={{
+              title: selectedPlayer.player.Name,
+              labels: [
+                "Score",
+                "Birdies",
+                "Pars",
+                "Bogeys",
+                "DK Pts",
+                // "DK Salary ($1k)",
+              ],
+              datasets: [
+                {
+                  label: "SportsDataio",
+                  data: [
+                    selectedPlayer.player.TotalScore,
+                    selectedPlayer.player.Birdies,
+                    selectedPlayer.player.Pars,
+                    selectedPlayer.player.Bogeys,
+                    selectedPlayer.player.FantasyPointsDraftKings,
+                    // selectedPlayer.player.DraftKingsSalary / 1000,
+                  ],
+                  borderColor: "#4BC0C0",
+                  backgroundColor: "#4BC0C0",
+                },
+              ],
+            }}
+          />
+        </div>
+      ) : (
+        <div className="h-auto"></div>
+      )}
     </div>
   );
 }
