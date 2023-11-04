@@ -70,6 +70,13 @@ function NhlComponent() {
           borderWidth: 2,
         },
       ],
+      options: {
+        plugins: {
+          legend: {
+            position: "top",
+          },
+        },
+      },
     };
 
     return result;
@@ -161,7 +168,7 @@ function NhlComponent() {
         {isLoadingGoalies ? (
           <div className="flex flex-row items-center h-96 nhlComponentContainer">
             <SpinnerComponent></SpinnerComponent>
-        </div>
+          </div>
         ) : (
           <div className="flex flex-row items-center w-full justify-center">
             <div>

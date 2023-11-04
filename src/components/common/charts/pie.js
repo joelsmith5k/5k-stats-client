@@ -11,6 +11,10 @@ function PieChart({ chartData }) {
         options={{
           plugins: {
 
+            legend: {
+              position: 'bottom'
+              }
+
           }
         }}
       />

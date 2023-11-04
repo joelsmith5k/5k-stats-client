@@ -23,12 +23,12 @@ function HomePage() {
         <h3>NBA, NHL, and PGA insights.</h3>
       </div>
 
-      <div className="flex flex-row flex-wrap justify-around w-screen h-auto my-5 mx-10 overflow-auto border-t-2 border-slate-300">
+      <div className="flex flex-row flex-wrap justify-center content-center w-full standardStyle">
         {tiles.map((item) => (
           <div
             key={item.title}
             className={
-              "w-48 h-48 my-5 rounded-lg border-solid flex flex-col content-center justify-center text-center mx-3"
+              "w-48 h-48 my-5 rounded-lg border-solid flex flex-col content-center justify-center text-center mx-8"
             }
           >
             <Link to={item.url}>
