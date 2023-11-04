@@ -2,7 +2,7 @@ import { Bar } from "react-chartjs-2";
 
 function BarChart({ chartData }) {
   return (
-    <div className="chart-container">
+    <div className="">
       <Bar
         data={chartData}
         options={{
