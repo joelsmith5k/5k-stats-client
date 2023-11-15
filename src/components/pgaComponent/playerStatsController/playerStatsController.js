@@ -36,7 +36,7 @@ function PlayerStatsController({ players }) {
               ],
               datasets: [
                 {
-                  label: "SportsDataio",
+                  label: "SportsDataIO Projection",
                   data: [
                     selectedPlayer.player.TotalScore,
                     selectedPlayer.player.Birdies,
