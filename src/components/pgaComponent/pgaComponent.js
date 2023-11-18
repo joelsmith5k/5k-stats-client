@@ -60,7 +60,7 @@ function PgaComponent() {
   return (
     <div className="flex flex-col items-center min-h-screen standardColors">
       <div className="flex flex-row justify-center">
-        <div className="text-center my-8 py-4 px-4 rounded-lg border-solid border-2 border-slate-300">
+        <div className="text-center my-8 py-4 px-4 mx-2 rounded-lg border-solid border-2 border-slate-300">
           <h1>2023 PGA TOUR STATS</h1>
           <br />
           <h3>Individual Player Projections from sportdata.io</h3>
