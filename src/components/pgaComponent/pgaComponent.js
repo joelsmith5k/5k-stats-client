@@ -52,37 +52,41 @@ function PgaComponent() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col justify-center items-center h-screen pgaComponentContainer">
+      <div className="flex flex-col justify-center items-center h-screen standardColors">
         <SpinnerComponent></SpinnerComponent>
       </div>
     );
   }
   return (
-    <div className="flex flex-col text-center items-center pgaComponentContainer h-screen">
-      <div className="flex flex-col h-24 justify-center my-8">
-        <h1>2023 PGA TOUR STATS</h1>
-        <h3>Individual Player Projections from sportdata.io</h3>
+    <div className="flex flex-col items-center min-h-screen standardColors">
+      <div className="flex flex-row justify-center">
+        <div className="text-center my-8 py-4 px-4 rounded-lg border-solid border-2 border-slate-300">
+          <h1>2023 PGA TOUR STATS</h1>
+          <br />
+          <h3>Individual Player Projections from sportdata.io</h3>
+        </div>
       </div>
 
       {isLoading ? (
-        <div className="flex flex-col h-auto justify-center ">
+        <div className="flex flex-row h-auto justify-center ">
           <SpinnerComponent />
         </div>
       ) : (
-        <div className="flex flex-col">
-          <div className="w-auto my-4 py-4 mx-4 px-4 rounded-lg border-solid border-2 border-slate-300">
-            <h1>
-              {tournament.Name} - {tournament.Venue}
-            </h1>
-            <h2>Par: {tournament.Par}</h2>
-            <h2>Yards: {tournament.Yards}</h2>
-            <h2>Start: {startDate}</h2>
+        <>
+          <div className="flex flex-row justify-center">
+            <div className="my-4 mx-4 px-4 text-center">
+              <h2>
+                {tournament.Name} - {tournament.Venue}
+              </h2>
+              <h2>Par: {tournament.Par}</h2>
+              <h2>Yards: {tournament.Yards}</h2>
+              <h2>Start: {startDate}</h2>
+            </div>
           </div>
-
-          <div className="flex flex-col">
+          <div className="flex flex-row justify-center">
             <PlayerStatsController players={players.slice(0, 10)} />
           </div>
-        </div>
+        </>
       )}
     </div>
   );

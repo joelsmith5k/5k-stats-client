@@ -17,12 +17,12 @@ function PlayerStatsController({ players }) {
     <div className="standardColors">
       <div className="flex flex-row justify-center">
         <div className="w-80">
-        <DropDownComponent items={players} onChange={handleFieldChange} />
+          <DropDownComponent items={players} onChange={handleFieldChange} />
         </div>
       </div>
 
       {showChartData ? (
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-row justify-center py-8">
           <BarChart
             chartData={{
               title: selectedPlayer.player.Name,

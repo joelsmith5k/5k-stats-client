@@ -6,13 +6,13 @@ import Col from "react-bootstrap/Col";
 
 function NbaComponent() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen nbaComponentContainer h-screen">
-        <div>
-          <h1>NBA PROJECTIONS</h1>
-        </div>
-        <div>
-          <h1>2024/2025 SEASON</h1>
-        </div>
+    <div className="flex flex-col items-center justify-center h-screen standardColors">
+      <div>
+        <h2>NBA PROJECTIONS</h2>
+      </div>
+      <div>
+        <h2>2024/2025 SEASON</h2>
+      </div>
     </div>
   );
 }
