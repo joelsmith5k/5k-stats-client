@@ -14,7 +14,7 @@ function PlayerStatsController({ players }) {
   };
 
   return (
-    <div className="standardColors">
+    <div className="standardColors w-5/6">
       <div className="flex flex-row justify-center">
         <div className="w-80">
           <DropDownComponent items={players} onChange={handleFieldChange} />
@@ -32,7 +32,7 @@ function PlayerStatsController({ players }) {
                 "Pars",
                 "Bogeys",
                 "DK Pts",
-                // "DK Salary ($1k)",
+                "DK Salary ($1k)",
               ],
               datasets: [
                 {
@@ -43,10 +43,11 @@ function PlayerStatsController({ players }) {
                     selectedPlayer.player.Pars,
                     selectedPlayer.player.Bogeys,
                     selectedPlayer.player.FantasyPointsDraftKings,
-                    // selectedPlayer.player.DraftKingsSalary / 1000,
+                    selectedPlayer.player.DraftKingsSalary / 1000,
                   ],
                   borderColor: "#4BC0C0",
                   backgroundColor: "#4BC0C0",
+                  color: "#F5F5F5",
                 },
               ],
             }}

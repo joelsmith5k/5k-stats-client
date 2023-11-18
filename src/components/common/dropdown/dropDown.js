@@ -7,7 +7,11 @@ function classNames(...classes) {
 }
 
 function DropDownComponent({ items, onChange }) {
-  const [selected, setSelected] = useState({playerid: -1, Rank: "", Name: "Make a selection"});
+  const [selected, setSelected] = useState({
+    playerid: -1,
+    Rank: "",
+    Name: "Make a selection",
+  });
 
   const handleSelect = (e) => {
     onChange(e.currentTarget.dataset.playerid);
@@ -19,10 +23,12 @@ function DropDownComponent({ items, onChange }) {
         {({ open }) => (
           <>
             <div className="relative mt-2">
-              <Listbox.Button className=" w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <Listbox.Button className=" w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
                 <span className="flex items-center">
                   <span className="ml-3 block truncate">
-                    {selected.playerid == -1? selected.Name : selected.Rank + ". " + selected.Name}
+                    {selected.playerid == -1
+                      ? selected.Name
+                      : selected.Rank + ". " + selected.Name}
                   </span>
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">

@@ -14,7 +14,7 @@ function HomePage() {
   ];
 
   return (
-    <div className="flex flex-col items-center standardColors">
+    <div className="flex flex-col items-center min-h-screen standardColors">
       <div className="flex flex-row justify-center">
         <div className="w-5/6 justify-center text-center my-10 px-2 py-5">
           <h1>Welcome to 5kstats.</h1>
