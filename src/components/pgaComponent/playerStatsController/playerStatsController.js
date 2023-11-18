@@ -45,9 +45,11 @@ function PlayerStatsController({ players }) {
                     selectedPlayer.player.FantasyPointsDraftKings,
                     selectedPlayer.player.DraftKingsSalary / 1000,
                   ],
-                  borderColor: "#4BC0C0",
+                  borderColor: "#ecf0f1",
                   backgroundColor: "#4BC0C0",
                   color: "#F5F5F5",
+                  borderWidth: 2,
+                  borderRadius: 12.5,
                 },
               ],
             }}
