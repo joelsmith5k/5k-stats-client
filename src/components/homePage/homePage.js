@@ -14,16 +14,18 @@ function HomePage() {
   ];
 
   return (
-    <div className="homePageComponentContainer flex flex-col items-center h-screen ">
-      <div className="flex flex-col h-auto w-5/6 justify-center text-center my-10 px-2 py-5 rounded-lg border-solid border-2 border-slate-300 ">
-        <h1>Welcome to 5kstats.</h1>
-        <br />
-        <h3>A platform for curated sports stats built with ReactJS.</h3>
-        <br />
-        <h3>NBA, NHL, and PGA insights.</h3>
+    <div className="flex flex-col items-center standardColors">
+      <div className="flex flex-row justify-center">
+        <div className="w-5/6 justify-center text-center my-10 px-2 py-5">
+          <h1>Welcome to 5kstats.</h1>
+          <br />
+          <h3>A platform for curated sports stats built with ReactJS.</h3>
+          <br />
+          <h3>NBA, NHL, and PGA insights.</h3>
+        </div>
       </div>
 
-      <div className="flex flex-row flex-wrap justify-center content-center w-full standardStyle">
+      <div className="flex flex-row flex-wrap justify-center content-center w-full">
         {tiles.map((item) => (
           <div
             key={item.title}
