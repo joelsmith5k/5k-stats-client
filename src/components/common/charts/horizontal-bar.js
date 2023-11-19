@@ -31,7 +31,7 @@ function BarChart({ chartData }) {
     responsive: true,
     plugins: {
       legend: {
-        position: "right",
+        position: "bottom",
         labels: {
           color: "white",
         },
@@ -76,7 +76,7 @@ function BarChart({ chartData }) {
 
   return (
     <div className="flex flex-row w-screen justify-center">
-      <div className="flex flex-row justify-center w-2/3 h-96">
+      <div className="flex flex-row justify-center w-96 h-96">
         <Bar options={options} data={data} />
       </div>
     </div>
