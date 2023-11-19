@@ -125,58 +125,55 @@ function NhlComponent() {
 
   if (isLoadingAggregates) {
     return (
-      <div className="flex flex-col justify-center items-center h-screen nhlComponentContainer">
+      <div className="flex flex-col justify-center items-center min-h-screen nhlComponentContainer">
         <SpinnerComponent></SpinnerComponent>
       </div>
     );
   }
   return (
-    <div className="flex flex-col justify-center items-center nhlComponentContainer">
-      <div className="flex flex-col justify-center items-center content-center h-36 w-full mx-4">
-        <div className="text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen standardColors">
+      <div className="flex flex-row h-24 items-center ">
+        <div className="text-center py-2">
           <h2>NHL GOALS AGAINST ANALYSIS</h2>
         </div>
-        <div className="w-96 flex-col text-center"></div>
       </div>
 
-      <div className="flex flex-col w-full py-2">
-        <div className="flex flex-row flex-wrap justify-center content-center w-full">
-          <div className="text-center py-2">
-            <h4>GOALS</h4>
-            <PieChart chartData={goalsChartData} />
-          </div>
-          <div className="text-center py-2">
-            <h4>GOALSCORERS</h4>
-            <PieChart chartData={playersChartData} />
-          </div>
+      <div className="flex flex-row flex-wrap justify-center content-center">
+        <div className="text-center py-2">
+          <h4>GOALS</h4>
+          <PieChart chartData={goalsChartData} />
         </div>
-
-        <div className="flex flex-row text-center">
-          <div className="w-full mx-auto text-center py-4">
-            <p>
-              This page was built to help test a theory that positional data is
-              underexplored in NHL projections.
-              <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
-              {nhlAggregates.num_players} players against 39 NHL goalies over
-              the 20/21, 21/22, and 22/23 seasons.
-              <br></br>
-              Data sourced from www.hockey-reference.com.
-            </p>
-          </div>
+        <div className="text-center py-2">
+          <h4>GOALSCORERS</h4>
+          <PieChart chartData={playersChartData} />
         </div>
-
-        {isLoadingGoalies ? (
-          <div className="flex flex-row items-center h-96 nhlComponentContainer">
-            <SpinnerComponent></SpinnerComponent>
-          </div>
-        ) : (
-          <div className="flex flex-row items-center w-full justify-center">
-            <div>
-              <GoalieBreakdownComponent goalieStats={goalieBreakdowns} />
-            </div>
-          </div>
-        )}
       </div>
+
+      <div className="flex flex-row">
+        <div className="w-full mx-auto text-center py-4 px-2">
+          <p>
+            This page was built to help test a theory that positional data is
+            underexplored in NHL projections.
+            <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
+            {nhlAggregates.num_players} players against 39 NHL goalies over the
+            20/21, 21/22, and 22/23 seasons.
+            <br></br>
+            Data sourced from www.hockey-reference.com.
+          </p>
+        </div>
+      </div>
+
+      {isLoadingGoalies ? (
+        <div className="flex flex-row items-center h-96 nhlComponentContainer">
+          <SpinnerComponent></SpinnerComponent>
+        </div>
+      ) : (
+        <div className="flex flex-row items-center w-full justify-center">
+          <div>
+            <GoalieBreakdownComponent goalieStats={goalieBreakdowns} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -101,17 +101,20 @@ function GoalieBreakdownComponent({ goalieStats }) {
   };
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-col items-center standardColors">
+      <div className="flex flex-row justify-center">
         <h3>Individual Goalie Statistics</h3>
+      </div>
+
+      <div>
         <DropDownComponent items={goalieStats} onChange={handleFieldChange} />
       </div>
-      <div></div>
-      <div className="flex flex-row flex-wrap justify-center content-center w-full h-96">
+
+      <div className="flex flex-row flex-wrap justify-center content-center h-96">
         {isLoadingGoalie ? (
           ""
         ) : (
-          <div className="text-center py-2 h-96">
+          <div className="text-center py-2">
             <PieChart chartData={currentDataSet} />
             <input
               name="checkbox"
@@ -121,7 +124,9 @@ function GoalieBreakdownComponent({ goalieStats }) {
               checked={showDexterity}
               onChange={(e) => {}}
             />
-            <p className="text-xs">{showDexterity ? "Hide Dexterity" : "Show Dexterity"}</p>
+            <p className="text-xs">
+              {showDexterity ? "Hide Dexterity" : "Show Dexterity"}
+            </p>
           </div>
         )}
       </div>

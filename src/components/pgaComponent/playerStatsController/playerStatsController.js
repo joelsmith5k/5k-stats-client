@@ -16,9 +16,7 @@ function PlayerStatsController({ players }) {
   return (
     <div className="standardColors w-5/6">
       <div className="flex flex-row justify-center">
-        <div className="w-80">
-          <DropDownComponent items={players} onChange={handleFieldChange} />
-        </div>
+        <DropDownComponent items={players} onChange={handleFieldChange} />
       </div>
 
       {showChartData ? (
