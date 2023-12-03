@@ -128,7 +128,7 @@ function NhlComponent() {
     );
   }
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen standardColors">
+    <div className="flex flex-col items-center justify-center min-h-screen standardColors overflow-hidden">
       <div className="flex flex-row h-24 items-center ">
         <div className="text-center py-2">
           <h2>NHL GOALS AGAINST ANALYSIS</h2>
