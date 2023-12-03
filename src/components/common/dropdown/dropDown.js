@@ -10,7 +10,7 @@ function DropDownComponent({ items, onChange }) {
   const [selected, setSelected] = useState({
     playerid: -1,
     Rank: "",
-    Name: "Make a selection",
+    name: "Make a selection",
   });
 
   const handleSelect = (e) => {
