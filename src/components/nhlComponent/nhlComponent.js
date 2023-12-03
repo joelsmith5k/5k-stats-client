@@ -151,12 +151,11 @@ function NhlComponent() {
           <p>
             This page was built to help test a theory that positional data is
             underexplored in NHL goalscoring projections.
-            <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
-            {nhlAggregates.num_players} players against 56 NHL goalies over the
-            20/21, 21/22, and 22/23 seasons.
+            <br></br>I've analyzed {nhlAggregates.GA} goals (and counting) from{" "}
+            {nhlAggregates.num_players} players against 56 NHL goalies over 5 seasons.
             <br></br>
             <br></br>
-            "Goalies Decide Hockey Games.." - a random Reddit user, 2023
+            "Goaltenders Decide Hockey Games.." - random Reddit user, 2023.
             <br></br>
             <br></br>
             Data sourced from www.hockey-reference.com.
