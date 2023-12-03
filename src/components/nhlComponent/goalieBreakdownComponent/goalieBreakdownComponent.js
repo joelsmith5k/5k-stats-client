@@ -2,6 +2,7 @@ import { useState } from "react";
 import DropDownComponent from "../../common/dropdown/dropDown";
 import PieChart from "../../common/charts/pie";
 import { useEffect } from "react";
+import GoalieGridComponent from "../goalieGridComponent/goalieGridComponent";
 
 function GoalieBreakdownComponent({ goalieStats }) {
   const [goalieChartDataSimple, setGoalieChartDataSimple] = useState({});
@@ -31,6 +32,7 @@ function GoalieBreakdownComponent({ goalieStats }) {
           borderWidth: 2,
         },
       ],
+      goal_details: goalie.goal_details,
     };
     return result;
   };
@@ -75,6 +77,7 @@ function GoalieBreakdownComponent({ goalieStats }) {
           borderWidth: 2,
         },
       ],
+      goal_details: goalie.goal_details,
     };
     return result;
   };
@@ -106,27 +109,33 @@ function GoalieBreakdownComponent({ goalieStats }) {
         <h3>Individual Goalie Statistics</h3>
       </div>
 
-      <div>
+      <div className="flex flex-row justify-center content-center">
         <DropDownComponent items={goalieStats} onChange={handleFieldChange} />
       </div>
 
-      <div className="flex flex-row flex-wrap justify-center content-center h-96">
+      <div className="flex flex-row justify-center content-center">
         {isLoadingGoalie ? (
           ""
         ) : (
-          <div className="text-center py-2">
-            <PieChart chartData={currentDataSet} />
-            <input
-              name="checkbox"
-              type="checkbox"
-              id="checkbox"
-              onClick={checkBoxFunction}
-              checked={showDexterity}
-              onChange={(e) => {}}
-            />
-            <p className="text-xs">
-              {showDexterity ? "Hide Dexterity" : "Show Dexterity"}
-            </p>
+          <div className="flex flex-col flex-wrap justify-center content-center">
+            <div className="flex flex-col items-center justify-center">
+              <PieChart chartData={currentDataSet} />
+              <input
+                name="checkbox"
+                type="checkbox"
+                id="checkbox"
+                onClick={checkBoxFunction}
+                checked={showDexterity}
+                onChange={(e) => {}}
+              />
+              <p className="text-xs">
+                {showDexterity ? "Hide Dexterity" : "Show Dexterity"}
+              </p>
+            </div>
+
+            <div className="flex flex-row items-center justify-center">
+              <GoalieGridComponent goals={currentDataSet.goal_details} />
+            </div>
           </div>
         )}
       </div>

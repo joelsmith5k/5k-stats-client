@@ -7,6 +7,7 @@ import { CategoryScale } from "chart.js";
 import SpinnerComponent from "../common/spinner/spinner";
 import DropDownComponent from "../common/dropdown/dropDown";
 import GoalieBreakdownComponent from "./goalieBreakdownComponent/goalieBreakdownComponent";
+import GoalieGridComponent from "./goalieGridComponent/goalieGridComponent";
 
 Chart.register(CategoryScale);
 
@@ -86,10 +87,6 @@ function NhlComponent() {
     let alphabetRank = 1;
     goalieBreakdowns.sort((a, b) => a.name.localeCompare(b.name));
     goalieBreakdowns.forEach((g) => {
-      // access goal details with g['goal_details']
-      // for (const detail in g['goal_details']) {
-      //   console.log(" goal... " + detail);
-      // }
       g.PlayerID = g._id;
       g.Rank = alphabetRank++;
     });
@@ -153,10 +150,14 @@ function NhlComponent() {
         <div className="w-full mx-auto text-center py-4 px-2">
           <p>
             This page was built to help test a theory that positional data is
-            underexplored in NHL projections.
+            underexplored in NHL goalscoring projections.
             <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
             {nhlAggregates.num_players} players against 56 NHL goalies over the
             20/21, 21/22, and 22/23 seasons.
+            <br></br>
+            <br></br>
+            "Goalies Decide Hockey Games.." - a random Reddit user, 2023
+            <br></br>
             <br></br>
             Data sourced from www.hockey-reference.com.
           </p>

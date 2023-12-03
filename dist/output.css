@@ -576,7 +576,7 @@ video {
 
 .App {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: lightseagreen;
   border: 3px solid orange;
   display: flex;

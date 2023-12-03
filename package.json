@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "ag-grid-react": "^31.0.0",
     "axios": "^0.24.0",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.4.0",
