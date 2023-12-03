@@ -133,7 +133,8 @@ function GoalieBreakdownComponent({ goalieStats }) {
               </p>
             </div>
 
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-col items-center justify-center py-4">
+              <h4>Goalscorer Breakdown</h4>
               <GoalieGridComponent goals={currentDataSet.goal_details} />
             </div>
           </div>

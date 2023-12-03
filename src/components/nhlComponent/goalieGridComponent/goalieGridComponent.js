@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { AgGridReact } from "ag-grid-react"; // React Grid Logic
 import "ag-grid-community/styles/ag-grid.css"; // Core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Theme
+import { isEqual } from "lodash";
 
 function GoalieGridComponent({ goals }) {
   // Row Data: The data to be displayed.
+
   const [rowData, setRowData] = useState(Object.values(goals));
 
   // Column Definitions: Defines & controls grid columns.
@@ -15,6 +17,10 @@ function GoalieGridComponent({ goals }) {
     { field: "dexterity" },
     { field: "team" },
   ]);
+
+  useEffect(() => {
+    setRowData(Object.values(goals));
+  }, [goals]);
 
   const gridOptions = {
     defaultColDef: {
