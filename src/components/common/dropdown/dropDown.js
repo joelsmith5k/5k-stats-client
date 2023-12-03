@@ -27,8 +27,8 @@ function DropDownComponent({ items, onChange }) {
                 <span className="flex items-center">
                   <span className="ml-3 block truncate">
                     {selected.playerid == -1
-                      ? selected.Name
-                      : selected.Rank + ". " + selected.Name}
+                      ? selected.name
+                      : selected.Rank + ". " + selected.name}
                   </span>
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
@@ -71,7 +71,7 @@ function DropDownComponent({ items, onChange }) {
                                 "ml-3 block truncate"
                               )}
                             >
-                              {item.Rank + ". " + item.Name}
+                              {item.Rank + ". " + item.name}
                             </span>
                           </div>
 

@@ -23,7 +23,7 @@ function PlayerStatsController({ players }) {
         <div className="flex flex-row justify-center py-8">
           <BarChart
             chartData={{
-              title: selectedPlayer.player.Name,
+              title: selectedPlayer.player.name,
               labels: [
                 "Score",
                 "Birdies",

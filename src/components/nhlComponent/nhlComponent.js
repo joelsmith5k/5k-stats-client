@@ -84,7 +84,7 @@ function NhlComponent() {
 
   const formatGoalieBreakdowns = (goalieBreakdowns) => {
     let alphabetRank = 1;
-    goalieBreakdowns.sort((a, b) => a.Name.localeCompare(b.Name));
+    goalieBreakdowns.sort((a, b) => a.name.localeCompare(b.name));
     goalieBreakdowns.forEach((g) => {
       // access goal details with g['goal_details']
       // for (const detail in g['goal_details']) {
