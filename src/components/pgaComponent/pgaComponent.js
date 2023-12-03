@@ -58,7 +58,7 @@ function PgaComponent() {
     );
   }
   return (
-    <div className="flex flex-col items-center min-h-screen standardColors">
+    <div className="flex flex-col items-center min-h-screen standardColors overflow-hidden py-4">
       <div className="flex flex-row justify-center">
         <div className="text-center my-8 py-4 px-4 mx-2 rounded-lg border-solid border-2 border-slate-300">
           <h1>2023 PGA TOUR STATS</h1>
@@ -68,12 +68,12 @@ function PgaComponent() {
       </div>
 
       {isLoading ? (
-        <div className="flex flex-row h-auto justify-center ">
+        <div className="flex flex-row h-auto justify-center">
           <SpinnerComponent />
         </div>
       ) : (
         <>
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-row justify-center ">
             <div className="my-4 mx-4 px-4 text-center">
               <h2>
                 {tournament.Name} - {tournament.Venue}
