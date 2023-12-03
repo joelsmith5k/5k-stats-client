@@ -155,7 +155,7 @@ function NhlComponent() {
             This page was built to help test a theory that positional data is
             underexplored in NHL projections.
             <br></br>I analyzed {nhlAggregates.GA} goals from{" "}
-            {nhlAggregates.num_players} players against 39 NHL goalies over the
+            {nhlAggregates.num_players} players against 56 NHL goalies over the
             20/21, 21/22, and 22/23 seasons.
             <br></br>
             Data sourced from www.hockey-reference.com.
