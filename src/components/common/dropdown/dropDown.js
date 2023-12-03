@@ -18,7 +18,7 @@ function DropDownComponent({ items, onChange }) {
   };
 
   return (
-    <div className="my-10 w-80">
+    <div className="py-10 w-80">
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
