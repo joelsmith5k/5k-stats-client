@@ -85,10 +85,11 @@ function NhlComponent() {
 
   const formatGoalieBreakdowns = (goalieBreakdowns) => {
     let alphabetRank = 1;
-    goalieBreakdowns.sort((a, b) => a.name.localeCompare(b.name));
+    goalieBreakdowns.sort((a, b) => a.Name.localeCompare(b.Name));
     goalieBreakdowns.forEach((g) => {
       g.PlayerID = g._id;
       g.Rank = alphabetRank++;
+      g.name = g.Name
     });
     return goalieBreakdowns;
   };
