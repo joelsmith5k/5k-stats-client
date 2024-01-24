@@ -11,7 +11,7 @@ function GoalieGridComponent({ goals }) {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState([
-    { field: "Name" },
+    { field: "name" },
     { field: "goals" },
     { field: "position" },
     { field: "dexterity" },
