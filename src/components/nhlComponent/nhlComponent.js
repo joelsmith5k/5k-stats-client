@@ -152,7 +152,7 @@ function NhlComponent() {
             This page was built to help test a theory that positional data is
             underexplored in NHL goalscoring projections.
             <br></br>I've analyzed {nhlAggregates.GA} goals (and counting) from{" "}
-            {nhlAggregates.num_players} players against 56 NHL goalies over 5
+            {nhlAggregates.num_players} players against 62 NHL goalies over 6
             seasons.
             <br></br>
             <br></br>
