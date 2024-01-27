@@ -41,7 +41,7 @@ function GoalieGridComponent({ goals }) {
   return (
     <div
       className="ag-theme-quartz my-4"
-      style={{ height: 300, width: "33vh" }}
+      style={{ height: "100%", width: "100%" }}
     >
       <AgGridReact
         rowData={rowData}

@@ -104,20 +104,26 @@ function GoalieBreakdownComponent({ goalieStats }) {
   };
 
   return (
-    <div className="flex flex-col items-center standardColors">
+    <div className="flex flex-col items-center standardColors w-full overflow-visible">
       <div className="flex flex-row justify-center">
         <h3>Individual Goalie Statistics</h3>
       </div>
 
-      <div className="flex flex-row justify-center content-center">
-        <DropDownComponent items={goalieStats} onChange={handleFieldChange} />
-      </div>
+      {isLoadingGoalie ? (
+        <div className="flex flex-row justify-center content-center h-96">
+          <DropDownComponent items={goalieStats} onChange={handleFieldChange} />
+        </div>
+      ) : (
+        <div className="flex flex-row justify-center content-center">
+          <DropDownComponent items={goalieStats} onChange={handleFieldChange} />
+        </div>
+      )}
 
-      <div className="flex flex-row justify-center content-center">
+      <div className="flex flex-row justify-center content-center w-full">
         {isLoadingGoalie ? (
           ""
         ) : (
-          <div className="flex flex-col flex-wrap justify-center content-center">
+          <div className="flex flex-col flex-wrap justify-center content-center w-full">
             <div className="flex flex-col items-center justify-center">
               <PieChart chartData={currentDataSet} />
               <input
@@ -133,7 +139,7 @@ function GoalieBreakdownComponent({ goalieStats }) {
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center py-4">
+            <div className="flex flex-col items-center justify-center w-3/4 h-96">
               <h4>Goalscorer Breakdown</h4>
               <GoalieGridComponent goals={currentDataSet.goal_details} />
             </div>
