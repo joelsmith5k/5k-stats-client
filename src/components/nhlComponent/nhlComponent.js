@@ -159,7 +159,7 @@ function NhlComponent() {
             "Goaltenders Decide Hockey Games.." - random Reddit user, 2023.
             <br></br>
             <br></br>
-            Data sourced from www.hockey-reference.com.
+            Positions based on Hockey Reference designation.
           </p>
         </div>
       </div>
