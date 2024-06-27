@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./homePage.css";
-import NBA from "../../images/logos/NBA_logo.png";
 import NHL from "../../images/logos/NHL_logo.png";
 import PGA from "../../images/logos/PGA_logo.png";
 import { Link } from "react-router-dom";
 
 function HomePage() {
   const tiles = [
-    { title: "NBA", subtitle: "Coming Soon", image: NBA, url: "/NBA" },
     { title: "NHL", subtitle: "", image: NHL, url: "/NHL" },
     { title: "PGA", subtitle: "", image: PGA, url: "/PGA" },
   ];
@@ -21,7 +19,7 @@ function HomePage() {
           <br />
           <h3>A platform for curated sports stats built with ReactJS.</h3>
           <br />
-          <h3>NBA, NHL, and PGA insights.</h3>
+          <h3>NHL and PGA insights.</h3>
         </div>
       </div>
 

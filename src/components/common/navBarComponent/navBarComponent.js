@@ -7,7 +7,6 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 const NavBarComponent = () => {
   const navigation = [
     { name: "Home", url: "/", current: false},
-    { name: "NBA", url: "/nba", current: false },
     { name: "NHL", url: "/nhl", current: false },
     { name: "PGA", url: "/pga", current: false },
   ];
