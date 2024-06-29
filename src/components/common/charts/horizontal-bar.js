@@ -29,6 +29,7 @@ function BarChart({ chartData }) {
       color: "#F5F5F5",
     },
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "bottom",
