@@ -24,7 +24,6 @@ function NhlComponent() {
     getGoalieBreakdowns();
   }, []);
 
-  // make this more generic, accept params.. [] for labels, [] for data, etc..
   const formatGoalsChartData = (data) => {
     let result = {
       labels: ["Left Wing", "Center", "Right Wing", "Defense"],

@@ -21,7 +21,7 @@ function BarChart({ chartData }) {
 
   const options = {
     indexAxis: "y",
-    fontColor: "#F5F5F5",
+    defaultFontColor: "#F5F5F5",
     elements: {
       bar: {
         borderWidth: 2,
@@ -45,26 +45,6 @@ function BarChart({ chartData }) {
         },
       },
     },
-
-    scaleShowValues: true,
-    scales: {
-      xAxes: [
-        {
-          stacked: false,
-          beginAtZero: true,
-          scaleLabel: {
-            labelString: "Statistic",
-          },
-          ticks: {
-            stepSize: 1,
-            min: 0,
-            autoSkip: false,
-            fontColor: "#F5F5F5",
-            fontSize: 14,
-          },
-        },
-      ],
-    },
   };
 
   const labels = chartData.labels;
@@ -75,10 +55,8 @@ function BarChart({ chartData }) {
   };
 
   return (
-    <div className="flex flex-row w-screen justify-center">
-      <div className="flex flex-row justify-center w-96 h-96">
+    <div className="flex flex-col items-center w-screen h-96">
         <Bar options={options} data={data} />
-      </div>
     </div>
   );
 }

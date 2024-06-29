@@ -71,7 +71,7 @@ function GoalieBreakdownComponent({ goalieStats }) {
             "#94D1C1",
             "#6F7070",
             "#4F4F4F",
-            "#F3BA2F", //yellow
+            "#F3BA2F",
           ],
           borderColor: "#291720",
           borderWidth: 2,

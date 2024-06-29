@@ -5,8 +5,8 @@ import "ag-grid-community/styles/ag-theme-quartz.css"; // Theme
 import { isEqual } from "lodash";
 
 function GoalieGridComponent({ goals }) {
+  
   // Row Data: The data to be displayed.
-
   const [rowData, setRowData] = useState(Object.values(goals));
 
   // Column Definitions: Defines & controls grid columns.
